@@ -1244,6 +1244,9 @@ public class TURBOGRAPHDatabaseMetaData implements DatabaseMetaData {
             } else if (type == UUType.U_TYPE_JSON) {
                 value[4] = new Short((short) java.sql.Types.VARCHAR);
                 value[5] = "JSON";
+            } else if (type == UUType.U_TYPE_HUGEINT) {
+                value[4] = new Short((short) java.sql.Types.VARCHAR);
+                value[5] = "HUGEINT";
             }
 
             rs.addTuple(value);
@@ -1616,6 +1619,11 @@ public class TURBOGRAPHDatabaseMetaData implements DatabaseMetaData {
                 case UUType.U_TYPE_JSON:
                     value[2] = new Integer(java.sql.Types.VARCHAR);
                     value[3] = "JSON";
+                    value[4] = new Integer(0);
+                    break;
+                case UUType.U_TYPE_HUGEINT:
+                    value[2] = new Integer(java.sql.Types.VARCHAR);
+                    value[3] = "HUGEINT";
                     value[4] = new Integer(0);
                     break;
             }

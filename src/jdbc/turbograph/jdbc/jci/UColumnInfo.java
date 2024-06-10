@@ -236,6 +236,7 @@ public class UColumnInfo {
             case UUType.U_TYPE_VARNCHAR:
             case UUType.U_TYPE_ENUM:
             case UUType.U_TYPE_JSON:
+            case UUType.U_TYPE_HUGEINT:
                 return "java.lang.String";
             case UUType.U_TYPE_NUMERIC:
                 return "java.math.BigDecimal";
@@ -290,6 +291,7 @@ public class UColumnInfo {
             case UUType.U_TYPE_VARNCHAR:
             case UUType.U_TYPE_ENUM:
             case UUType.U_TYPE_JSON:
+            case UUType.U_TYPE_HUGEINT:
                 return "java.lang.String[]";
             case UUType.U_TYPE_NUMERIC:
                 return "java.lang.Double[]";

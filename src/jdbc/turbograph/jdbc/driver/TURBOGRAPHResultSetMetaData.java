@@ -394,6 +394,10 @@ public class TURBOGRAPHResultSetMetaData implements ResultSetMetaData {
                             ele_type[i] = java.sql.Types.VARCHAR;
                             ele_type_name[i] = "JSON";
                             break;
+                        case UUType.U_TYPE_HUGEINT:
+                            ele_type[i] = java.sql.Types.VARCHAR;
+                            ele_type_name[i] = "HUGEINT";
+                            break;
                         default:
                             break;
                     }
@@ -438,7 +442,14 @@ public class TURBOGRAPHResultSetMetaData implements ResultSetMetaData {
                         col_disp_size[i] = col_prec[i];
                     }
                     break;
-
+                case UUType.U_TYPE_HUGEINT:
+                    col_type_name[i] = "HUGEINT";
+                    col_type[i] = java.sql.Types.VARCHAR;
+                    ele_type[i] = -1;
+                    if (col_prec[i] > col_disp_size[i]) {
+                        col_disp_size[i] = col_prec[i];
+                    }
+                    break;
                 default:
                     break;
             }
@@ -512,6 +523,16 @@ public class TURBOGRAPHResultSetMetaData implements ResultSetMetaData {
                 col_prec[i] = 0;
                 col_class_name[i] = "";
             }
+            if (r.type[i] == UUType.U_TYPE_HUGEINT) {
+                col_type[i] = java.sql.Types.VARCHAR;
+                col_type_name[i] = "HUGEINT";
+                col_prec[i] = r.precision[i];
+                if (col_prec[i] > col_disp_size[i]) {
+                    col_disp_size[i] = col_prec[i];
+                }
+                col_class_name[i] = "java.lang.String";
+            }
+            
             col_scale[i] = 0;
             ele_type[i] = -1;
             col_table[i] = "";
@@ -536,6 +557,7 @@ public class TURBOGRAPHResultSetMetaData implements ResultSetMetaData {
             case UUType.U_TYPE_VARCHAR:
             case UUType.U_TYPE_ENUM:
             case UUType.U_TYPE_JSON:
+            case UUType.U_TYPE_HUGEINT:
                 ret_size = 1;
                 break;
             case UUType.U_TYPE_BIT:

@@ -97,10 +97,11 @@ public abstract class UUType {
     public static final byte U_TYPE_DATETIMELTZ = 32;
     public static final byte U_TYPE_TIMETZ = 33; /* unused */
     public static final byte U_TYPE_JSON = 34;
+    public static final byte U_TYPE_HUGEINT = 35;
 
     /* append new type here and also modify U_TYPE_MAX */
 
-    public static final int U_TYPE_MAX = 34;
+    public static final int U_TYPE_MAX = 48;
 
     static boolean isCollectionType(byte type) {
         if (type == UUType.U_TYPE_SET

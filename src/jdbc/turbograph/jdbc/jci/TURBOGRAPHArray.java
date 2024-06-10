@@ -106,6 +106,7 @@ class TURBOGRAPHArray {
             case UUType.U_TYPE_VARNCHAR:
             case UUType.U_TYPE_ENUM:
             case UUType.U_TYPE_JSON:
+            case UUType.U_TYPE_HUGEINT:
                 internalArray = (Object[]) (new String[length]);
                 break;
             case UUType.U_TYPE_OBJECT:
