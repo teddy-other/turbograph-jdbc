@@ -831,6 +831,7 @@ public class TURBOGRAPHDatabaseMetaData implements DatabaseMetaData {
             UUType.U_TYPE_VARCHAR
         };
         boolean[] nullable = {true, true, false, false, false};
+        boolean isGraph = false;
 
         UStatement us = null;
         synchronized (u_con) {
@@ -879,11 +880,22 @@ public class TURBOGRAPHDatabaseMetaData implements DatabaseMetaData {
         // TABLE type
         int j = 0;
         if (types != null) {
-            for (j = 0; j < types.length; j++) if (types[j].equalsIgnoreCase("TABLE")) break;
+            for (j = 0; j < types.length; j++) {
+                if (types[j].equalsIgnoreCase("TABLE")) {
+                    break;
+                } else if (types[j].equalsIgnoreCase("NODE")) {
+                    isGraph = true;
+                    break;
+                }
+            }
         }
 
         if (types == null || j < types.length) {
-            value[3] = "TABLE";
+            if (isGraph) {
+                value[3] = "NODE";
+            } else {
+                value[3] = "TABLE";
+            }
 
             int i = 0;
             while (true) {
@@ -904,12 +916,21 @@ public class TURBOGRAPHDatabaseMetaData implements DatabaseMetaData {
         // VIEW type
         if (types != null) {
             for (j = 0; j < types.length; j++) {
-                if (types[j].equalsIgnoreCase("VIEW")) break;
+                if (types[j].equalsIgnoreCase("VIEW")) {
+                    break;
+                } else if (types[j].equalsIgnoreCase("EDGE")) {
+                    isGraph = true;
+                    break;
+                }
             }
         }
 
         if (types == null || j < types.length) {
-            value[3] = "VIEW";
+            if (isGraph) {
+                value[3] = "EDGE";
+            } else {
+                value[3] = "VIEW";
+            }
 
             int i = 0;
             while (true) {
