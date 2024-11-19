@@ -42,6 +42,7 @@ package turbograph.jdbc.jci;
 
 import turbograph.jdbc.driver.TURBOGRAPHBlob;
 import turbograph.jdbc.driver.TURBOGRAPHClob;
+import turbograph.jdbc.driver.TURBOGRAPHHugeInt;
 import turbograph.jdbc.driver.TURBOGRAPHOutResultSet;
 import turbograph.sql.TURBOGRAPHOID;
 import turbograph.sql.TURBOGRAPHTimestamptz;
@@ -473,6 +474,10 @@ public class UStatement {
             if (relatedConnection.getOracleStyleEmpltyString()) {
                 if ("".equals(value)) value = null;
             }
+        }
+
+        if (type == UUType.U_TYPE_HUGEINT) {
+            value = ((TURBOGRAPHHugeInt)value).getValue();
         }
 
         bindValue(index, type, value);

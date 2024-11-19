@@ -43,6 +43,7 @@ package turbograph.jdbc.jci;
 import turbograph.jdbc.driver.TURBOGRAPHBinaryString;
 import turbograph.jdbc.driver.TURBOGRAPHBlob;
 import turbograph.jdbc.driver.TURBOGRAPHClob;
+import turbograph.jdbc.driver.TURBOGRAPHHugeInt;
 import turbograph.sql.TURBOGRAPHOID;
 import turbograph.sql.TURBOGRAPHTimestamp;
 import turbograph.sql.TURBOGRAPHTimestamptz;
@@ -167,6 +168,7 @@ public abstract class UUType {
         else if (value instanceof TURBOGRAPHClob) return UUType.U_TYPE_CLOB;
         else if (value instanceof Object[]) return UUType.U_TYPE_SEQUENCE;
         else if (value instanceof TURBOGRAPHBinaryString) return UUType.U_TYPE_VARCHAR;
+        else if (value instanceof TURBOGRAPHHugeInt) return UUType.U_TYPE_HUGEINT;
         else return UUType.U_TYPE_NULL;
     }
 }
