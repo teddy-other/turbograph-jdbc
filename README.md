@@ -1,5 +1,16 @@
-## HOW TO BUILD TurboGraph JDBC Driver
-### TurboGraph JDBC Driver Source Build Guide (ANT Build Project)
+## TurboGraph++를 위한 JDBC Driver
+- TurboGraph++ DBMS 위해 설계 되었습니다.
+- CUBRID JDBC 소스(JDBC 2.0 SPEC.)를 기반으로 개발 되었으며,
+- 제공되는 Driver는 JDK 1.6을 준수 합니다.
+- TurboGraph++ JDBC는 [Api-Broker](https://github.com/postech-dblab-iitp/api-broker) 를 통해 TurboGraph++와 연결됩니다.
+
+## 소스로 부터 빌드하기
+### 빌드 요구 사항
+
+- ANT
+- JDK 1.6 ~ JDB 1.8
+
+### 빌드 실행 방법
 - Windows
   ```
   build.bat 
@@ -11,9 +22,10 @@
   ./build.sh 
   ```
 
-### TurboGraph JDBC Driver 
-- implements an interface to enable access 
-  from applications in Java to TurboGraph DBMS.
-  The driver has been developed based on the CUBRID JDBC source (the JDBC 2.0 specification)
-  and the default driver provided is complied with JDK 1.6.
+## 예제 소스
+아래 Link에 예제를 통해 TurboGraph++위한 JDBC 사용방법을 확인 할 수 있습니다.
 
+[TurboGraph++ JDBC Example](https://github.com/hwany7seo/turbograph-jdbc/blob/develop/src/jdbc/turbograph/jdbc/test/TurboGraphTest.java)
+
+## 라이센스
+- BSD License
