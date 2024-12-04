@@ -1,16 +1,16 @@
-## TurboGraph++¸¦ À§ÇÑ JDBC Driver
-- TurboGraph++ DBMS À§ÇØ ¼³°è µÇ¾ú½À´Ï´Ù.
-- CUBRID JDBC ¼Ò½º(JDBC 2.0 SPEC.)¸¦ ±â¹İÀ¸·Î °³¹ß µÇ¾úÀ¸¸ç,
-- Á¦°øµÇ´Â Driver´Â JDK 1.6À» ÁØ¼ö ÇÕ´Ï´Ù.
-- TurboGraph++ JDBC´Â [Api-Broker](https://github.com/postech-dblab-iitp/api-broker) ¸¦ ÅëÇØ TurboGraph++¿Í ¿¬°áµË´Ï´Ù.
+## TurboGraph++ë¥¼ ìœ„í•œ JDBC Driver
+- TurboGraph++ DBMS ìœ„í•´ ì„¤ê³„ ë˜ì—ˆìŠµë‹ˆë‹¤.
+- CUBRID JDBC ì†ŒìŠ¤(JDBC 2.0 SPEC.)ë¥¼ ê¸°ë°˜ìœ¼ë¡œ ê°œë°œ ë˜ì—ˆìœ¼ë©°,
+- ì œê³µë˜ëŠ” DriverëŠ” JDK 1.6ì„ ì¤€ìˆ˜ í•©ë‹ˆë‹¤.
+- TurboGraph++ JDBCëŠ” [Api-Broker](https://github.com/postech-dblab-iitp/api-broker) ë¥¼ í†µí•´ TurboGraph++ì™€ ì—°ê²°ë©ë‹ˆë‹¤.
 
-## ¼Ò½º·Î ºÎÅÍ ºôµåÇÏ±â
-### ºôµå ¿ä±¸ »çÇ×
+## ì†ŒìŠ¤ë¡œ ë¶€í„° ë¹Œë“œí•˜ê¸°
+### ë¹Œë“œ ìš”êµ¬ ì‚¬í•­
 
 - ANT
-- JDK 1.6 ~ JDB 1.8
+- JDK 1.6 ~ JDK 1.8
 
-### ºôµå ½ÇÇà ¹æ¹ı
+### ë¹Œë“œ ì‹¤í–‰ ë°©ë²•
 - Windows
   ```
   build.bat 
@@ -22,10 +22,24 @@
   ./build.sh 
   ```
 
-## ¿¹Á¦ ¼Ò½º
-¾Æ·¡ Link¿¡ ¿¹Á¦¸¦ ÅëÇØ TurboGraph++À§ÇÑ JDBC »ç¿ë¹æ¹ıÀ» È®ÀÎ ÇÒ ¼ö ÀÖ½À´Ï´Ù.
+## ì˜ˆì œ ì†ŒìŠ¤
+ì•„ë˜ Linkì— ì˜ˆì œë¥¼ í†µí•´ TurboGraph++ìœ„í•œ JDBC ì‚¬ìš©ë°©ë²•ì„ í™•ì¸ í•  ìˆ˜ ìˆìŠµë‹ˆë‹¤.
 
 [TurboGraph++ JDBC Example](https://github.com/hwany7seo/turbograph-jdbc/blob/develop/src/jdbc/turbograph/jdbc/test/TurboGraphTest.java)
 
-## ¶óÀÌ¼¾½º
+## Maven ì •ë³´
+ì €ì¥ì†Œ : https://ftp.cubrid.org/iitp/maven
+
+### Maven ë¹Œë“œì— í¬í•¨
+
+```
+<dependency>
+    <groupId>turbograph</groupId>
+    <artifactId>turbograph-jdbc</artifactId>
+    <version>release</version>
+</dependency>
+```
+
+## ë¼ì´ì„¼ìŠ¤
 - BSD License
+
